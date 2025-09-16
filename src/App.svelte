@@ -1,26 +1,32 @@
 <script lang="ts">
-import Dropdown from './lib/Dropdown.svelte';
+  import Dropdown from './lib/Dropdown.svelte';
   import DropdownItem from './lib/DropdownItem.svelte';
 
-let isOpen = false;
-let data = ["Abhishek", "Kumar", "Pandey"]
+  let isOpen = false;
+  let data = ['Abhishek', 'Kumar', 'Pandey'];
+
+  const handleSelect = (value: string | { displayKey: string }) => {
+    console.log('value', value);
+  };
 </script>
 
-<h1>
-  <Dropdown open={isOpen}>
-    {#snippet trigger()}
-    <button onclick={() => isOpen = !isOpen}>
-      <!-- {selected ?? "Select an Option"} -->
-       {isOpen ? 'you have selected':"Please select"}
+<Dropdown
+  open={isOpen}
+  onclick={(valueToBeSetWith: boolean) => (isOpen = valueToBeSetWith)}>
+  {#snippet trigger()}
+    <button onclick={() => (isOpen = !isOpen)}>
+      {isOpen ? 'you have selected' : 'Please select'}
     </button>
-    {/snippet}
-    {#snippet items()}
+  {/snippet}
+  {#snippet items()}
     {#each data as item}
-      <DropdownItem value={item}>
+      <DropdownItem
+        value={item}
+        displayKey="name"
+        onSelect={(value: string | { displayKey: string }) =>
+          handleSelect(value)}>
         {item}
       </DropdownItem>
     {/each}
-    {/snippet}
-  </Dropdown>
-
-</h1>
+  {/snippet}
+</Dropdown>

@@ -29,7 +29,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build && tsc",
+    "build": "vite build && tsc --project tsconfig.app.json",
     "package": "npm run build",
     "prepare": "npm run build",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",

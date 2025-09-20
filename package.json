@@ -1,31 +1,41 @@
 {
   "name": "svelte-headless-dropdown",
   "description": "A headless, accessible, typeahead-enabled dropdown component for Svelte",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
   "keywords": [
     "svelte",
     "dropdown",
     "headless",
     "select",
-    "autocomplete / typeahead",
-    "accessible"
+    "autocomplete",
+    "typeahead",
+    "accessible",
+    "ui",
+    "component"
   ],
-  "main": "dist/svelte-headless-dropdown.umd.js",
+  "main": "dist/svelte-headless-dropdown.cjs.js",
   "module": "dist/svelte-headless-dropdown.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/lib/index.d.ts",
   "svelte": "dist/svelte-headless-dropdown.es.js",
   "exports": {
     ".": {
+      "types": "./dist/types/lib/index.d.ts",
       "import": "./dist/svelte-headless-dropdown.es.js",
-      "require": "./dist/svelte-headless-dropdown.umd.js",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/svelte-headless-dropdown.cjs.js"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishekpandeykr/svelte-headless-dropdown.git"
+  },
+  "author": "Abhishek",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
